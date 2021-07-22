@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>intersection_observer</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 80px auto;
+        background-color: plum;
+        transition: 2000ms;
+      }
+
+      .box.active {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+    <div class="box">11</div>
+    <div class="box">12</div>
+    <div class="box">13</div>
+    <div class="box">14</div>
+    <div class="box">15</div>
+    <div class="box">16</div>
+    <div class="box">17</div>
+    <div class="box">18</div>
+    <div class="box">19</div>
+    <div class="box">20</div>
+
+    <script>
+
+
+    /* 나쁜 사용 예제
+
+    window.addEventListener("scroll", (event) => {
+      const boxes = document.querySelectorAll(".box");
+      boxes.forEach((box) => {
+        const rect = box.getBoundingClientRect();
+      });
+    });   
+
+
+    -------------------------------------------------------------
+    콜백함수라는 것은 브라우저에서 특정한 이벤트가 발생할 때,  등록된 콜백함수가 수행되는데 이 수행되는 것은 메인스레드 라는 UI스레드라고도 불리는 그 위에서 동작한다. 그래서 위의 블럭이 실행하는 동안에는 다른 코드가 실행할 수 없다.
+
+    혹여나, 블럭이 실행되는 동안 클릭 이벤트가 발생해도 클릭 이벤트의 핸들러가 수행 할 수 없다. 그래서 이벤트에 등록하는 콜백함수는 최대한 간단하고, 성능이 무겁지 않으며, 성능과 무관한 가벼운 것으로 하는 것이 좋다.
+    -------------------------------------------------------------
+    */
+
+
+    /* intersection_observer 
+    -------------------------------------------------------------
+    특정한 요소들이 화면에 들어오거나 나갈 때, 
+    우리가 등록한 콜백함수를 호출 해 준다.
+    -------------------------------------------------------------
+    */
+
+
+
+    // box라는 class를 가진 모든 요소를 배열로 가져온다.
+    const boxes = document.querySelectorAll(".box");
+
+    /* 전달 할 콜백을 만든다
+    const callback = (entries, observer) => {
+      console.log("observer!");
+    };
+
+    // 웹 API에서 제공하는 IntersectionObserver라는 클래스를 이용해서, new연산자를 이용하여 오브젝트를 만든다. 
+    const observer = new IntersectionObserver(callback);
+    */
+
+    const options = {
+      root: null, // 디폴트값 : viewport
+      rootMargin: "0px",  // 디폴트 값 : "0px"
+      threshold: 0.5 // 0~1
+    };
+
+    const observer = new IntersectionObserver((entries, options) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        } else {
+          entry.target.classList.remove("active");
+        }
+      });
+    });
+    
+    // 각각의 박스를 빙글빙글 돌면서, observer라는 관찰자가 관찰하도록 한다.
+    boxes.forEach(box => observer.observe(box));
+
+
+
+    /*
+    console.log(entries);
+      -IntersectionObserverEntry : 화면에 들어온 요소에 대한 정보
+      -intersectionRatio : 요소가 얼마만큼 들어와 있는지 확인 한다. 0~1
+      -isIntersectiong : 요소가 안으로 들어온 상태면 true / 아니면 false 
+      -isVisible : 현재 요소가 보여지는지 아닌지 true / false 
+      -rootBounds : 디폴트 값은 뷰포트(윈도우 창)를 기준, 뷰포트의 크기를 알 수 있다. 
+      -target : 지금 현재 관찰하고 있는 요소
+
+
+    console.log(observer);
+      -root: null, 디폴트값 : viewport
+      -rootMargin: "0px",  디폴트 값 : "0px"
+      -threshold: 0. 얼마만큼 보여져야 콜백함수가 호출될지를 결정함
+    */
+    </script>
+  </body>
+</html>

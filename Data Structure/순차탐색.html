@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png"> 
+    <title>자료구조- 순차탐색</title>
+</head>
+<body>
+    <script>
+
+    /***** 순차탐색 알고리즘 ******/
+    // 길이가 1천만인 배열에서 데이터를 탐색하는데에 최악의 경우:  21 ms
+
+    // 배열을 만든다
+    const arr = []; 
+
+    // 배열에 1천만칸짜리 배열을 만든다
+    for (let i = 0; i < 10000000; i++) {
+    arr.push(Math.floor(Math.random() * 10000000));
+    }
+    console.log("길이가 1천만개인 배열을 생성하였다.");
+
+    const startDate = new Date(); // 순차탐색 시작하기 전에 시간을 구한다
+    const target = 7894562; // 숫자 설정
+    let found = false; // 찾지 못하였을 경우를 출력하기 위해서 found 변수를 이용
+
+    // target은 몇번째에 있는가?
+    for(let i = 0; i < arr.length; i++) {
+    // arr[i]번째가 target이라면
+    if (arr[i] === target) {
+        console.log(`${target}이 ${i}번째에 있음`);
+        found = true; 
+        break;
+    } 
+    }
+    // target을 찾지 못하고 loop를 나오게 되면 found는 여전히 false!
+    // found가 false라면 console.log 출력
+    if (found == false) {
+    console.log("찾지 못하였음,");
+    }
+    const endDate = new Date();
+    console.log(`순차탐색 소요시간 : ${endDate.getTime() - startDate.getTime()} ms`);
+    </script>
+</body>
+</html>

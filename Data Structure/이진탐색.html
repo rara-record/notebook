@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png"> 
+    <title>자료구조- 이진탐색</title>
+</head>
+<body>
+    <script>
+
+    /***** 이진탐색 알고리즘 ******/
+    // 길이가 1천만인 배열에서 데이터를 탐색하는데에 최악의 경우: 약 0ms 소요
+
+    // 배열을 만든다
+    const arr = []; 
+
+    // 배열에 1천만칸짜리 배열을 만든다
+    for (let i = 0; i < 10000000; i++) {
+      arr.push(Math.floor(Math.random() * 10000000));
+    }
+    console.log("길이가 1천만개인 배열을 생성하였다.");
+    const startDate = new Date(); 
+    arr.sort(); // 이진탐색을 위한 퀵정렬
+    const endDate = new Date();
+    console.log(`퀵정렬에 소요된 시간, ${endDate.getTime() - startDate.getTime()}  ms`);
+    
+    
+    // 이진탐색 알고리즘
+    const startDate2 = new Date(); 
+    const target = 7843625; // 찾을 타겟겍
+    let start = 0;
+    let end = arr.length - 1; 
+    let found = -1; // target을 유무를 출력하기 위해 사용
+    //
+    while(1) {
+      let mid = start+parseInt((end-start)/2); // mid값 구하는 공식
+      // arr의 midindex와  target이 같을 경우
+      if ( arr[mid] === target ) {
+        // found에 arr의 midindex가 
+        found = mid;
+        // 탈출한다
+        break;
+      }
+      // end-start가 1이라는 것은 mid를 구할 수 없다는 뜻이므로 탈출한다.
+      if (end-start === 1) break;
+      // target이 더 크다는 것은 mid보다 오른쪽에 있다는 것
+      if ( arr[mid] < target ) start = mid // start값을 mid값으로 바꿔줌
+      // target이 더 작다는 것은 mid보다 왼쪽에 있다는 것
+      if ( arr[mid] > target ) end = mid   // end값을 mid값으로 바꿔줌
+    }
+
+    // loop를 끝냈을때 found변수에 있는 것이 여전히 -1이라면? 
+    // target도 찾지 못하였다는 뜻
+    if (found == -1) {
+      console.log("찾지 못하였음");
+    } else {
+      console.log(`${found} 인덱스에서 ${target}을 찾았음.`)
+    }
+    const endDate2 = new Date();
+    console.log(`이진탐색에 소요된 시간, ${endDate2.getTime() - startDate2.getTime()}  ms`);
+    </script>
+</body>
+</html>

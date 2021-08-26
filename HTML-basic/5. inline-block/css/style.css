@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 어떤 텍스트가 들어오든, 좌우의 여백을 일괄적으로 만드는 방법  */
+a {
+    display: inline-block;
+    height: 40px;
+    margin: 100px;
+    font: bold 16px/40px "arial";
+    color: black;
+    background: aqua;
+    padding: 0px 50px;
+    border-radius: 20px;
+}
+
+li {
+    border: 1px solid red;
+    height: 40px;
+}
+
+li:nth-of-type(1) {background-color: #000;}
+li:nth-of-type(2) {background-color: #111;}
+li:nth-of-type(3) {background-color: #222;}
+li:nth-of-type(4) {background-color: #333;}
+li:nth-of-type(5) {background-color: #444;}
+li:nth-of-type(6) {background-color: #555;}
+li:nth-of-type(7) {background-color: #666;}
+li:nth-of-type(8) {background-color: #777;}
+li:nth-of-type(9) {background-color: #888;}
+li:nth-of-type(10) {background-color: #999;}
+li:nth-of-type(11) {background-color: #aaa;}
+li:nth-of-type(12) {background-color: #bbb;}
+li:nth-of-type(13) {background-color: #ccc;}
+li:nth-of-type(14) {background-color: #ddd;}
+li:nth-of-type(15) {background-color: #eee;}
+li:nth-of-type(16) {background-color: #fff;}
+

@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.fa-heart {
+    font-size: 100px;
+    color: hotpink;
+}
+
+div {
+    background: rgb(75, 143, 245);
+    width: 100px;
+    padding: 15px;
+
+}
+
+.fa-twitter {
+    font-size: 100px;
+    color: white;
+}
+
+.fa-youtube {
+    font-size: 100px;
+    color: red;
+}

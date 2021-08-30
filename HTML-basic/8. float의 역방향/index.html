@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float역방향</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
+
+    <div id="wrap2">
+        <div class="wrap2__left">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+
+        <div class="wrap2__center"></div>
+
+        <div class="wrap2__right">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+    float배치 중 세로로 긴 박스로 빈 공간이 생기게 될 때,
+    여백의 방향의 box의 float방향이 같으면
+    해당 여백 안으로 박스가 들어가지 못함
+    - 해결 방법 : 여백의 방향과 float의 방향을 다르게 설정
+-->

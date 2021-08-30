@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    border: 1px solid red;
+}
+
+/* 
+    가상 선택자
+    : CSS에서 가상으로 컨텐트를 추가 가능
+    : HTML에 들어가 있는 내용이 아니므로 스크린리더기가 정보를 읽지 못함
+    : 주로 스크린리더기가 읽으면 안되는 꾸밈효과를 제작할때 활용
+    : 텍스트만 삽입가능 (태그삽입 불가)
+*/
+h1::before {
+    content: "before";
+    color: blue;
+    background-color: lightblue;
+}
+
+h1::after {
+    content: "after";
+    color: red;
+}
+
+a {
+    display: block;
+    width: 140px;
+    height: 40px;
+    background: hotpink;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    margin: 50px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+a:hover {
+    background-color: aqua;
+}

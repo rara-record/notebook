@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*
+    body안에서 직계 자식의 블록요소는 높이값 100%가 적용이 되지 않는다.
+
+    풀 스크린 만드는 공식
+    width: 100%;
+    height: 100vh;
+
+    넓이 값을 100%가 아닌 100vw로 지정하면
+    세로 스크롤이 생겼을 때 가로스크롤이 생성됨
+    (100vw는 스크롤바 너비를 제외한 경우로 계산)
+    
+    width: 100% (세로 스크롤바를 포함한 안쪽 넓이)
+    width: 100vw (세로 스크롤바를 제외한 안쪽)
+*/
+
+div {
+    width: 100%;
+    height: 100vh;
+}
+
+div.span { 
+    color: #fff; 
+}
+
+.box1 {
+    background-color: pink;
+}
+
+.box1 span {
+    font-size: 300px;
+}
+
+.box2 {
+    background-color: orange;
+}
+
+.box2 span {
+    font-size: 10vw;
+}
+
+.box3 {
+    background-color: aqua;
+}
+
+.box4 {
+    background-color: orangered;
+}
+
+.box5 {
+    background-color: violet;
+}

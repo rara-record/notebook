@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+h1 {
+    border: 1px solid red;
+}
+
+ul {
+    border:1px solid pink;
+    width: 300px;
+}
+
+ul li {
+    border: 1px solid green;
+}
+
+div {
+    border: 1px solid black;
+}
+
+span {
+    text-decoration: line-through;
+}
+
+strong {
+    border: 1px solid violet;
+    width: 300px;
+    display: block;
+}

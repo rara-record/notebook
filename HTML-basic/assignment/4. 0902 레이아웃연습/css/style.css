@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fredericka+the+Great&display=swap');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+body {
+    background-color: #eee;
+}
+
+#box1 {
+    width: 100%;
+    padding: 180px 0 150px;
+}
+
+#box1 .inner {
+    position: relative;
+    width: 1180px;
+    margin: 0 auto;
+}
+
+#box1 .inner .hidden {
+    display: none;
+}
+
+#box1 .inner .wrap {
+    width: 100%;
+}
+
+#box1 .inner .wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#box1 .inner .wrap article {
+    position: relative;
+    float: left;
+    width: 280px;
+    height: 200px;
+    padding: 30px;
+    margin-right: 20px;
+    background-color: #fff;
+}
+
+#box1 .inner .wrap article:last-child {
+    margin: 0;
+}
+
+#box1 .inner .wrap article h2 {
+    font: bold 22px/1 'arial';
+    color: #333;
+    margin-bottom: 25px;
+}
+
+#box1 .inner .wrap article:nth-of-type(1),
+#box1 .inner .wrap article:nth-of-type(2) {
+    text-align: center;
+}
+
+/* article1 */
+#box1 .inner .wrap article:nth-of-type(1) h3{
+    font: bold 16px/1 'arial';
+    color: #666;
+    margin: 20px 0px 5px;
+}
+
+#box1 .inner .wrap article:nth-of-type(1) p {
+    font: 12px/1.1 'arial';
+    color: #888;
+}
+
+#box1 .inner .wrap article:nth-of-type(1) .btn {
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin-top: 15px;
+    font: bold 12px/1 'arial';
+    line-height: 30px;
+    text-align: center;
+    color: #555;
+    border: 1px solid #999;
+}
+
+/* article2 */
+#box1 .inner .wrap article:nth-of-type(2) ul{
+    width: 100%;
+}
+
+#box1 .inner .wrap article:nth-of-type(2) ul li{
+    display: inline-block;
+    margin-right: 14px;
+}
+
+#box1 .inner .wrap article:nth-of-type(2) ul li:last-child{
+    margin: 0;
+}
+
+#box1 .inner .wrap article:nth-of-type(2) ul li i{
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #999;
+    background: #eee;
+}
+
+#box1 .inner .wrap article:nth-of-type(2) ul li span{
+    display: block;
+    font: bold 12px/1 'arial';
+    color: #888;
+    margin-top: 20px;
+}
+
+/* article3, article4 */
+#box1 .inner .wrap article:nth-of-type(3) p,
+#box1 .inner .wrap article:nth-of-type(4) p {
+    font: 16px/1.5 'arial';
+    color: #555;
+    letter-spacing: 1.5px;
+}
+
+#box1 .inner .wrap article:nth-of-type(3) button,
+#box1 .inner .wrap article:nth-of-type(4) button {
+    position: absolute;
+    right: 25px;
+    top: 30px;  
+    color: #999;
+}

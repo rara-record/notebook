@@ -15,6 +15,33 @@ a {
     text-decoration: none;
 }
 
+/*
+    transition 
+    - 정해진 시간 동안 요소의 속성값을 부드럽게 변화시키는 속성
+
+    transition에 적용할 수 있는 속성
+    위치 - top, left, right, bottom 
+    크기 - width, height
+    박스속성 - margin, paddingm, border-radius, border-color
+    색상 - color, background-color
+    투명도 - opacity
+    변환속성 - transform
+
+    transition-delay : 이벤트 발생 후 몇 초 후에 재생할지 지정
+    transition-duration : 몇 초 동안 재생할지 지정
+    transition-property : 어떤 속성을 변형할지 지정
+
+    linear : 처음부터 끝까지 일정한 속도
+    ease : 천천히 시작되어 그 다음에는 빨라지고 마지막에 다시 느려진다
+    ease-in : 전환효과가 천천히 시작된다
+    ease-out : 전환효과가 천천히 끝난다
+    ease-in-out : 전환효과가 천천히 시작해서 천천히 끝난다
+    cubic-bezier()
+    축약형
+    - transition: property duration timing-function delay 
+
+*/
+
 section {
     position: relative;
     width: 100%;
@@ -71,31 +98,3 @@ section:hover .wrap article:nth-of-type(3) {
 section:hover .wrap article:nth-of-type(4) {
     transition-delay: 0.9s;
 }
-
-
-/*
-    transition 
-    - 정해진 시간 동안 요소의 속성값을 부드럽게 변화시키는 속성
-
-    transition에 적용할 수 있는 속성
-    위치 - top, left, right, bottom 
-    크기 - width, height
-    박스속성 - margin, paddingm, border-radius, border-color
-    색상 - color, background-color
-    투명도 - opacity
-    변환속성 - transform
-
-    transition-delay : 이벤트 발생 후 몇 초 후에 재생할지 지정
-    transition-duration : 몇 초 동안 재생할지 지정
-    transition-property : 어떤 속성을 변형할지 지정
-
-    linear : 처음부터 끝까지 일정한 속도
-    ease : 천천히 시작되어 그 다음에는 빨라지고 마지막에 다시 느려진다
-    ease-in : 전환효과가 천천히 시작된다
-    ease-out : 전환효과가 천천히 끝난다
-    ease-in-out : 전환효과가 천천히 시작해서 천천히 끝난다
-    cubic-bezier()
-    축약형
-    - transition: property duration timing-function delay 
-
-*/

@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    color: #fff;
+}
+
+section {
+    width: 100%;
+}
+
+section article {
+    position: relative;  
+    width: 200px;
+    height: 200px;
+    border: 5px solid #000;
+    margin: 100px;  
+    perspective: 900px;
+}
+
+section article div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    opacity: 0.4;
+}
+
+.frame1 div {
+    transform: rotateX(0deg); transition: .5s;
+}
+
+.frame1:hover div {
+    transform: rotateX(45deg);
+}
+
+.frame2 div {
+    transform-origin: right center;
+    transform: rotateY(0deg); 
+    transition: .5s; 
+}
+
+.frame2:hover div {
+    transform: rotateY(130deg);
+}
+
+.frame3 div {
+    transform-origin: left center;
+    transform: rotateY(0deg); 
+    transition: .5s; 
+}
+
+.frame3:hover div {
+    transform: rotateY(130deg);
+}

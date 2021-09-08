@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btnCall {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 100px;
+    position: relative;
+    border: 1px solid red;
+}
+
+.btnCall::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: top .5s 0s, transform .5s .5s;
+    /* top 즉시실행 -> 0.5초동안 동작이 일어난 다음, transform을 0.5초 후에 0.5초동안 실행*/
+}
+
+.btnCall::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: .5s;
+    transition: bottom .5s 0s, transform .5s .5s;
+}
+
+.btnCall span {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    margin-top: -1px; 
+    background-color: #000;
+    text-indent: -9999px;
+    transition: .5s;
+}
+
+.btnCall:hover::before {
+    transform: rotate(45deg);
+    top: calc(50% - 1px);
+}
+
+.btnCall:hover::after {
+    transform: rotate(-45deg);
+    bottom: calc(50% - 1px);
+}
+
+.btnCall:hover span {
+    left: 100%;
+    opacity: 0;
+}
+

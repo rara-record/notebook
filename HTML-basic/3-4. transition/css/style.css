@@ -67,7 +67,7 @@ section .wrap article {
     margin-right: 20px;
     background-color: orange;
     opacity: 0;
-    transition: transform 1s, opacity 1s;
+    transition: all 0.8s;
     transform: translateY(100px);
 }
 
@@ -96,5 +96,21 @@ section:hover .wrap article:nth-of-type(3) {
 }
 
 section:hover .wrap article:nth-of-type(4) {
+    transition-delay: 0.9s;
+}
+
+section .wrap article:nth-of-type(1) {
+    transition-delay: 0s;
+}
+
+section .wrap article:nth-of-type(2) {
+    transition-delay: 0.3s;
+}
+
+section .wrap article:nth-of-type(3) {
+    transition-delay: 0.6s;
+}
+
+section .wrap article:nth-of-type(4) {
     transition-delay: 0.9s;
 }

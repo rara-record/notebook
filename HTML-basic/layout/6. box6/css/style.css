@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#box3 {
+    width: 100%;
+    padding: 180px 0 150px;
+    background: #fff;
+}
+
+#box3 .inner {
+    position: relative;
+    width: 1180px;
+    margin: 0 auto;
+}
+
+#box3 .inner h1 {
+    font: bold 22px/1 'arial';
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#box3 .inner > p {
+    font: 16px/1 'arial';
+    color: #888;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#box3 .inner .wrap {
+    width: 100%;
+}
+
+#box3 .inner .wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#box3 .inner .wrap article {
+    float: left;
+    width: 280px;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+    border-bottom: 3px solid #888;
+}
+
+#box3 .inner .wrap article:last-child {
+    margin-right: 0;
+}
+
+#box3 .inner .wrap article .pic {
+    width: 100%;
+    height: 150px;
+    background: #666;
+}
+
+#box3 .inner .wrap article .texBox {
+    width: 100%;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+#box3 .inner .wrap article .texBox h2 {
+    font: bold 18px/1 'arial';
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#box3 .inner .wrap article .texBox p {
+    font: 14px/1.3 'arial';
+    color: #777;
+    margin-bottom: 30px;
+}
+
+#box3 .inner .wrap article .texBox .btn {
+    display: block;
+    width: 170px;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    font: 12px/40px 'arial';
+    color: #fff;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #888, #aaa);
+    box-shadow: 10px 1px 20px rgb(0, 0, 0, 0.2);
+}
+
+#box3 .inner .wrap article .texBox:hover {
+    border-bottom: 2px solid hotpink;
+}

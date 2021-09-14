@@ -1,0 +1,46 @@
+@charset 'utf-8'; 
+@import "reset.css"; 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.h {
+    position: absolute;
+    top: -9999px;
+    opacity: 0;
+}
+
+.wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*
+    input요소태그 (form태그)
+    - 사용자로부터 특정 정보값을 입력받기 위한 태그
+    - 모든 input요소 태그들은 form태그로 감싸야한다
+    - form태그에서 action은 입력 정보들을 보낼 위치를 지정
+
+    input태그로 입력받은 값들을 서버로 전송할 때 2가지 필요
+    - value : 실제 서버에 전송할 값
+    - name : value값의 네임택
+    - vale값을 name에 담아서 전송
+
+    id="입력받은 텍스트"
+    pwd="입력받은 비번"
+    hobby="game, music,"
+    gender="male", "female"
+    company="kt"
+    commnets="입력받은 장문의 글"
+*/

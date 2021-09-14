@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Tag</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Input Tag</legend>
+            <table>
+                <caption class="hidden">Input Tag 공부하기</caption>
+                <tr>
+                    <th>
+                        <label for="text">text</label>
+                    </th>
+                    <td>
+                        <input type="text" id="text" value="abcde" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="email">이메일</label>
+                    </th>
+                    <td>
+                        <input type="email" id="email" value="hello" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="tel">전화번호</label>
+                    </th>
+                    <td>
+                        <input type="tel" id="tel" required autofocus>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="password">PASSWORD</label>
+                    </th>
+                    <td>
+                        <input type="password" id="password" required placeholder="비밀번호를 입력하세요">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="number">number</label>
+                    </th>
+                    <td>
+                        <input type="number" id="number" required min="5" max="10">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="range">range</label>
+                    </th>
+                    <td>
+                        <input type="range" id="range" required min="5" max="10">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>날짜관련</legend>
+            <table>
+                <caption class="hidden">날짜관련 input tag</caption>
+                <tr>
+                    <th>
+                        <label for="date">date</label>
+                    </th>
+                    <td>
+                        <input type="date" id="date">
+                    </td>
+                </tr>                
+                <tr>
+                    <th>
+                        <label for="month">month</label>
+                    </th>
+                    <td>
+                        <input type="month" id="month">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="week">week</label>
+                    </th>
+                    <td>
+                        <input type="week" id="week">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>시간관련</legend>
+            <table>
+                <caption class="hidden">시간관련 input tag</caption>
+                <tr>
+                    <th>
+                        <label for="time">time</label>
+                    </th>
+                    <td>
+                        <input type="time" id="time" min="16:00" max="18:00">
+                    </td>
+                </tr>
+                
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>그 외</legend>
+            <table>
+                <caption class="hidden">그 외 input tag</caption>
+                <tr>
+                    <td>
+                        <input type="file" multiple>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="hidden" value="">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <input type="submit" value="제출하기">
+    </form>
+</body>
+</html>

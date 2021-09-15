@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textarea&Select&Datalist&Button</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- textarea  -->
+    <form action="/signup" method="post">
+        <fieldset>
+            <legend>textarea 자기소개서</legend>
+            
+            <textarea name="intro" id="intro" cols="15" rows="5">저는 김보라입니다.</textarea>
+        </fieldset>
+
+
+        <!-- select  -->
+        <fieldset>
+            <legend>select 주문 상품을 선택해주세요</legend>
+            <select name="goods" id="goods"  multiple>
+                <option value="apple_10kg">사과 10kg</option>
+                <!-- selected: 디폴트값 지정 -->
+                <option value="apple_20kg" selected>사과 20kg</option>
+                <option value="apple_30kg">사과 30kg</option>
+                <option value="apple_40kg">사과 40kg</option>
+                <option value="apple_50kg">사과 50kg</option>
+            </select>
+        </fieldset>
+
+        <!-- datalist -->
+        <fieldset>
+            <legend>datalist</legend>
+            <label for="ice-cream-choice">맛을 선택하세요</label>
+            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
+            <datalist id="ice-cream-flavors">
+                <option value="Chocolate">
+                <option value="Coconut">
+                <option value="Mint">
+                <option value="Strawberry">
+                <option value="Vanilla">
+            </datalist>
+        </fieldset>
+        <button type="제출하기">제출하기</button>
+        <button type="reset">리셋하기</button>
+        <button type="button" onclick="alert('hello world')">버튼</button>
+    </form>
+</body>
+</html>

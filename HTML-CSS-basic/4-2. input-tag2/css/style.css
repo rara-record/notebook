@@ -1,0 +1,21 @@
+@charset 'utf-8'; 
+@import "reset.css"; 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    position: absolute;
+    top: -9999px;
+    opacity: 0;
+}

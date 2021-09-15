@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio&Checkbox</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- checkbox -->
+    <form action="#" method="post">
+        <fieldset>
+            <legend>좋아하는 색상을 모두 선택해주세요.</legend>
+            <ul>
+                <li>
+                    <label for="red">빨강</label>
+                    <input type="checkbox" id="red" value="red">
+                </li>
+                <li>
+                    <label for="yellow">노랑</label>
+                    <input type="checkbox" id="yellow" value="yellow">
+                </li>
+                <li>
+                    <label for="purple">보라</label>
+                    <input type="checkbox" id="purple" value="purple">
+                </li>
+                <li>
+                    <label for="blue">파랑</label>
+                    <input type="checkbox" id="blue" value="blue">
+                </li>
+                <li>
+                    <label for="orange">주황</label>
+                    <input type="checkbox" id="orange" value="orange">
+                </li>
+            </ul>
+        </fieldset>
+
+        <!-- radio -->
+        <!-- radio에서 하나만 선택하려면 name을 동일하게 해주어야 한다 -->
+        <fieldset>
+            <legend>배송방법은?</legend>
+            <table>
+                <caption class="hidden">회원 배송방법 테이블</caption>
+                <tr>
+                    <td>
+                        <label for="free">무료</label>
+                        <input type="radio" name="delivery" id="free" value="free">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pay">유료</label>
+                        <input type="radio" name="delivery" id="pay" value="pay">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

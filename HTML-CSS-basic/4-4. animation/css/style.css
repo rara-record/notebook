@@ -1,0 +1,81 @@
+@charset 'utf-8'; 
+@import "reset.css"; 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;   
+}
+
+a {
+    text-decoration: none;
+}
+
+fieldset {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    position: absolute;
+    top: -9999px;
+    opacity: 0;
+}
+
+/*
+    animation
+    animation-name : 애니메이션 이름
+    animation-duration : 애니메이션이 몇 초 동안 재생할지 지정
+    animation-delay : 애니메이션이 몇 초 후에 재생할지 
+    animation-direction : 애니메이션 진행 방향
+    animation-iteration-count : 애니메이션 반복 횟수
+    animation-play-state : 애니메이션 재생상태
+    animation-timing-function : 수치변형함수
+
+
+
+    @keyframes 이름 {
+        0%{}
+        100%{}
+    }
+
+    from 
+    to
+*/
+
+#box {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: red;
+    font: 100px/200px 'arial';
+    color: #fff;
+    text-align: center;
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: none;
+    animation-direction: alternate;
+    animation-play-state: running;
+    /*animation: rotate 2s linear noneinfinite alternate*/
+}
+
+#box:hover {
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+    0% {
+        left: 0;
+
+    }
+
+    100% {
+        left: 500px;
+        transform: rotate(360deg);
+    }
+}

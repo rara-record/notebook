@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*
+    flex
+    부모요소에 flex적용
+    display: flex : 자신은 블록 속성, 자식 요소에 flex환경 설정
+    display : inline-flex : 자식은 인라인 속성, 자식 요소에 flex환경 설정
+
+    flex-direction
+    - row : 기본축 가로(디폴트)
+    - column : 기본축을 세로로 지정
+    - row-reverse : 자식 요소 컨텐츠를 가로 역순으로 정렬
+    - column-reverse : 자식 요소 컨텐츠를 세로 역순으로 정렬
+
+    flex-wrap
+    자식요소에 줄바꿈 적용
+    - nowrap : 자식요소에 줄바꿈 x(디폴트)
+    - wrap : 줄바꿈
+
+    flex-flow
+    direction, wrap 축약문
+    : row-wrap
+
+    justify-content 기본축으로 정렬하기 
+    : flex-start - 자식요소를 시작방향으로 종료
+    : flex-end - 종료방향으로 종료
+    : center - 가운데로 정렬
+    : space-between - 자식요소 좌우 사이에 여백'만' 균일하게 배분하여 정렬
+    : space-around - 자식요소 좌우 사이에 여백'을' 균일하게 배분하여 정렬
+    : space-evenly - 자식요소의 여백을 양끝까지 균일하게 배분하여 정렬
+
+    align-content 반대축으로 정렬하기(2줄이상)
+    : flex-start - 자식요소를 시작방향으로 종료
+    : flex-end - 종료방향으로 종료
+    : center - 가운데로 정렬
+    : space-between - 자식요소 좌우 사이에 여백'만' 균일하게 배분하여 정렬
+    : space-around - 자식요소 좌우 사이에 여백'을' 균일하게 배분하여 정렬
+    : space-evenly - 자식요소의 여백을 양끝까지 균일하게 배분하여 정렬
+
+    align-item 반대축으로 정렬하기(1줄)
+    : stretch(디폴트)
+    : center : Items를 가운데 정렬
+    : flex-start : Items를 각 줄의 시작점(flex-start)으로 정렬
+    : flex-end : Items를 각 줄의 끝점(flex-end)으로 정렬
+    : baseline : Items를 문자 기준선에 정렬
+
+    order
+    : 자식요소 순서 지정, 순번
+
+*/
+
+main {
+    width: 100%;
+    height: 100vh;
+    background-color: lightcyan;
+}
+
+main section {
+    width: 100%;
+    height: 100vh;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid blue;
+}
+
+main section article {
+    width: 100%;
+    height: 300px;
+    font-size: 50px;
+    background-color: aqua;
+    border: 1px solid #999; 
+}
+

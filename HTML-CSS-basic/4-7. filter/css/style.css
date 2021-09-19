@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*
+    filter
+    -
+    blur : 요소의 흐림 효과
+    brightness : 밝기 조절
+    contrast : 명도 대비
+    grayscale : 흑백 지정
+    hue-rotate : 색상 단계를 조절
+    invert : 색상 반전
+    saturate : 채도 조절
+    sepia : 갈색 톤 단계 조절
+*/
+
+div {
+    width: 650px;
+    margin: 100px auto;
+    padding: 10px;
+}
+
+div img {
+    width: 200px;
+    margin: 6px;
+}
+
+/* blur : 값이 커질수록 흐려짐 */
+div img:nth-of-type(2) {
+    filter: blur(2px); 
+}
+
+/* brightness : 값이 작으면 어두워지고, 커지면 밝아짐 
+    디폴트1, %(퍼센트)로 작업 가능.
+*/
+div img:nth-of-type(3) {
+    /* filter: brightness(0.5); */
+    filter: brightness(50%);
+}
+
+/* contrast : 100%에서 작아지면 명암대비 효과 감소, 커지면 증가 */
+div img:nth-of-type(4) {
+    filter: contrast(150%);
+}
+
+/* grayscale : 0~100%, 100%에 가까울수록 흑백으로 전환 */
+div img:nth-of-type(5) {
+    filter: grayscale(100%);
+}
+
+/* hue-rotate : 0~360deg사이까지 색상변경 가능, 0deg(디폴트)*/
+div img:nth-of-type(6) {
+    filter: hue-rotate(180deg);
+}
+
+/* invert : 0~100% */
+div img:nth-of-type(7) {
+    filter: invert(100%);
+}
+
+/* saturate : 0에 가까울 수록 채도가 낮아진다, 1(디폴트) */
+div img:nth-of-type(8) {
+    filter: saturate(1.5);
+}
+
+/* sepia : 100%에 가까울수록 갈색톤으로 변환 */
+div img:nth-of-type(9) {
+    filter: sepia(50%);
+}
+

@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* comfile */
+@import "reset.scss";
+@import "font.scss";
+@import "mixin.scss";
+
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    width: 100%;
+    background-color: $bgBody;
+
+    .wrap {
+        border: 1px solid red;
+
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }    
+
+        .item {
+            float: left;
+            width: 300px;
+            padding: 20px;
+            margin: 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            transition-duration:1s; 
+            transform:rotateY(180deg); 
+            opacity:0; 
+
+            h2 {
+                font: bold $titSize/1 'orbitron';
+                color: $tit;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font: normal 16px/1 'arial';
+                color: $con;
+                margin-bottom: 20px;
+            }
+
+            a {
+                @include button();
+                transition-property: all;
+                transition-duration: 1s;
+                transition-timing-function: linear;
+                transition-delay: 2s;
+
+                &:hover {
+                    @include button( $wid: 150px, $bgColor: hotpink,);
+                }
+            }
+            
+            &:hover {
+                h2 {color: #000;}
+                p {color: #000;}
+                a {color: yellow;}
+            }
+            
+            // &:nth-of-type(1) {
+            //     transition-delay: 0s;
+            // }
+            // &:nth-of-type(2) {
+            //     transition-delay: 0.3s;
+            // }
+            // &:nth-of-type(3) {
+            //     transition-delay: 0.6s;
+            // }
+            // &:nth-of-type(4) {
+            //     transition-delay: 0.9s;
+            // }
+
+            @for $i from 1 through 4 {
+                &:nth-of-type(#{$i}) {
+                    transition-delay: (0.3s * $i) - 0.3s;
+                }
+            }
+        }
+
+        &:hover {
+            .item {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+    }
+}
+
+

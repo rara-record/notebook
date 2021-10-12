@@ -27,7 +27,7 @@ console.log(fruits[fruits.length - 1]); // 🍌
 
 
 
-console.clear();
+
 // 3. Looping over an array
 // print all fruits
 
@@ -106,7 +106,7 @@ console.log(newFruits); // (7) ["🍎", "🍓", "🍒", "🍉", "🍑", "🍈",
 
 
 
-console.clear();
+
 // 5. Searching 
 
 // a. indexOf : find the index
@@ -122,7 +122,6 @@ console.log(fruits.indexOf('🍅'));  // -1
 console.log(fruits.includes('🍉'));  // true
 
 // c. lastIndexOf
-console.clear();
 fruits.push('🍎');
 console.log(fruits);
 console.log(fruits.indexOf('🍎'));  // 0
@@ -133,8 +132,8 @@ console.log(fruits.lastIndexOf('🍎'));  // 5
 // interface ReadonlyArray<T>
 console.log(fruits.toString());
 
-
-for(let i = 0; i < 30; i++){
-    const number = [];
-    console.log(number[i]);
+const number = [];
+for(let i = 0; i <= 30; i++){
+    number.push(i);
 }
+console.log(number);

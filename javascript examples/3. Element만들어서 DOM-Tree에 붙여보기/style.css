@@ -1,0 +1,14 @@
+
+#example, #container{
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+#example {
+    background-color: lightyellow;
+}
+
+#container {
+    background-color: lightblue;
+}

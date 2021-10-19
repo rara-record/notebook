@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>반복을 돌려서 DIV만들기</title>
+</head>
+<body>
+    <h2 id="title">반복을 돌려서 DIV를 만들어보기</h2>
+  <article id="mission">
+    <p>JS를 이용해서 아래 분홍박스안의 입력박스 안에 쓰여진 숫자만큼의 div를 아래 황색박스안에 만들고 각각의 div의 내용을 황색박스에 추가되는 순서대로 1 2 3 4 .. 를 넣어주세요</p>
+    <p>만들어질 황색박스 안의 모습은 아래 파란박스의 모습과 같습니다 (물론 4개를 표시한것은 예시일뿐입니다)</p>
+    <p>파란박스의 id는 example이며 황색박스의 id는 container입니다 </p>
+  </article>
+
+  <div id="source">
+    <input type="text" id="data" />
+    <script>
+      document.getElementById('data').value = Math.round(Math.random() * 20) + 1;
+    </script>
+  </div>
+
+  <div id="example">
+     <div>1</div>
+     <div>2</div>
+     <div>3</div>
+     <div>4</div>
+  </div>
+
+  <div id="container"></div>
+</body>
+</html>

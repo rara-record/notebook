@@ -1,0 +1,10 @@
+
+* {
+    padding: 10px;
+}
+
+#source { background-color: pink; }
+
+#example { background-color: lightskyblue; }
+
+#container { background-color: lightyellow; }

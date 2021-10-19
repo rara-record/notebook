@@ -1,0 +1,4 @@
+sass --watch -E utf-8 scss/style.scss:css/style.css
+
+
+

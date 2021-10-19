@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* comfile */
+@import "reset.scss";
+@import "font.scss";
+@import "mixin.scss";
+
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    width: 100%;
+    background-color: $bgBody;
+
+    .item {
+        float: left;
+        width: 300px;
+        padding: 20px;
+        margin: 20px;
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
+        h2 {
+            font: bold $titSize/1 'orbitron';
+            color: $tit;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font: normal 16px/1 'arial';
+            color: $con;
+            margin-bottom: 20px;
+        }
+
+        a {
+            @include button();
+        }
+
+        &:nth-of-type(1){
+            a{
+                @include button($bgColor:hotpink);
+            }
+        }
+
+        &:nth-of-type(2){
+            a{
+                @include button( $ht:60px, $wid :200px, $bgColor:aqua); 
+            }
+        }
+
+        &:nth-of-type(3){
+            a{
+                @include button($wid:150px); 
+            }
+        }
+
+        &:nth-of-type(4){
+            a{
+                @include button($wid:200px, $ht:24px, $bgColor:orange); 
+            }
+        }
+        
+        &:hover {
+            background-color: skyblue;
+            h2 {
+                color: #fff;
+            }
+
+            p {
+                color: #eee;
+            }
+
+            a {
+                color: yellow;
+            }
+        }
+    }
+}
+

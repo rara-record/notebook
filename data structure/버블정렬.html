@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료구조 - 버블정렬</title>
+</head>
+<body>
+    <script>
+
+      /****** 버블정렬 알고리즘*******/
+      // 길이가 1만개인 배열을 정렬하는데에 소요된 시간은 약: 138~150ms
+      
+      // 배열을 생성
+      const arr = [];
+      for (let i =0 ; i < 10000; i++) {
+        arr.push(Math.floor(Math.random() * 10000));
+      }
+      const startDate = new Date();
+      // n싸이클을 돌아야 하는데, 그게 언제 올지 모르니 무한루프로 시작
+      // 무한루프를 돌면서 한싸이클씩 본다
+      while(1) {
+        let count = 0;
+        for(let i = 0; i < arr.length - 2; i++) { // index7번까지 봐야하기 때문에 length-2
+          if (arr[i] > arr[i+1]) {
+            let temp = arr[i];
+            arr[i] = arr[i+1]
+            arr[i+1] = temp;
+            count++;
+          }
+        }
+        // n싸이클 자리 이동 횟수 = 0일때 break(정렬완료)
+        if (count == 0) break; 
+      }
+      const endDate = new Date();
+      console.log(`버블정렬 소요시간 : ${endDate.getTime() - startDate.getTime()} ms`);
+    </script>
+</body>
+</html>

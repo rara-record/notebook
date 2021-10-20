@@ -1,63 +1,57 @@
-// Q1. make a string out of an array
+
 {
+  // Q1. array를 string으로 반환하기 
+  // join: 배열의 모든 원소를 연결해 하나의 문자열로 만들어 반환한다.
+
   const fruits = ['apple', 'banana', 'orange'];
-  
-  /* join: 배열의 모든 원소를 연결해 하나의 문자열로 만들어 반환한다. 
-      => 배열을 string으로 변환.
-  */
-
-  const result = fruits.join(); 
-  console.log(result); // apple,banana,orange
+  const join = fruits.join(); 
+  console.log(join); // apple,banana,orange
 }
 
-// Q2. make an array out of a string 
+
 {
-  /*
-    split: 해당 문자열을 분리하여 배열로 반환한다. 
-    string.split([separator[, limit]])
-  */ 
+  // Q2. string을 array로 반환하기
+  // split(기준점, length): 해당 문자열을 분리하여 배열로 반환한다.
+
   const fruits = '🍎, 🥝, 🍌, 🍒';
-  const result = fruits.split("," , 2); 
-  console.log(result); // (2) ["🍎", " 🥝"]
+
+  const split = fruits.split(","); 
+  console.log(split); // ['🍎', ' 🥝', ' 🍌', ' 🍒']
+
+  const split2 = fruits.split("," , 2);
+  console.log(split2); // ['🍎', ' 🥝'] 
 }
 
-// Q3. make this array look like this: [5, 4, 3, 2, 1]
-{
 
-  /*
-    reverse: 배열을 원소 순서를 역순으로 변형한 뒤 그 배열의 참조를 반환한다.
-  */ 
+{
+  // Q3. 배열 뒤집기
+  // reverse: 배열을 원소 순서를 역순으로 변형한다. 원본을 손상한다.(참조반환으로 인하여)
+
   const array = [1, 2, 3, 4, 5];
   const result = array.reverse();
   console.log(result); // (5) [5, 4, 3, 2, 1]
   console.log(array); // (5) [5, 4, 3, 2, 1] : 참조 반환으로 인하여
 }
 
-// Q4. make new array without the first two elements
+
 {
-  /* 
-    - 새로운 배열을 만들어야 하므로 splice는 사용하지 못함 - 
-
-    splice: 배열 자체를 수정한다.
-    array.splice(startIndex[, deleteLength[, ...[, replaceItem]]])
-  
-  const array = [1, 2, 3, 4, 5];
-  const result = array.splice(0,2);
-  console.log(result); // (2) [1, 2]
-  console.log(array); // (3) [3, 4, 5]
-  */ 
-
-  /*
-    slice: 배열에서 원하는 부분만 리턴해서 받아오고 싶을때 쓴다.
-    array.slice(startIndex[, endIndex])
-  */ 
+  // Q4. 처음 두 요소를 제외하고, 새 배열 만들기 (3, 4, 5만 가져오기)
+  // slice(시작, 끝+1) : 배열 분리 (원본 배열 유지, 새로운 배열 반환), 배열에서 원하는 부분만 리턴해서 받아오고 싶을때 쓴다.
 
   const array = [1, 2, 3, 4, 5];
-  const result = array.slice(2,5);
-  console.log(result);  // (3) [3, 4, 5]
-  console.log(array); // (5) [1, 2, 3, 4, 5]
+  const slice = array.slice(2, 5);
+  console.log(slice); // [3, 4, 5]
+  console.log(array); // [1, 2, 3, 4, 5]
 
+  // splice를 쓰지 못하는 이유 
+  // splice(시작, 길이, 추가) : 원소 제거, 제거 후 추가 (원본 배열 수정)
+
+  const array2 = [1, 2, 3, 4, 5];
+  const splice = array2.splice(2, 3);
+  console.log(splice); // (2) [3, 4, 5]
+  console.log(array2); // (3) [1, 2]
 }
+
 
 class Student {
   constructor(name, age, enrolled, score) {
@@ -67,74 +61,101 @@ class Student {
     this.score = score;
   }
 }
+
 const students = [
-  new Student('A', 29, true, 45),
+  new Student('A', 30, true, 45),
   new Student('B', 28, false, 80),
   new Student('C', 30, true, 90),
   new Student('D', 40, false, 66),
-  new Student('E', 18, true, 88),
+  new Student('E', 18, true, 90),
 ];
 
-// Q5. find a student with the score 90
+
 {
+  // Q5. 점수가 90점인 학생 찾아보기.
+  // find: 콜백함수에서 요구하는 원소를 찾기 위해, 배열 안의 원소를 순서대로 탐색하면서 '최초'로 찾은 배열의 원소를 반환한다. 없는 경우 undefined.
 
-  /* find: 콜백함수를 만들어서 전달해야한다, true시 멈추고 리턴, 리턴시 불리언 타입*/
-  const result = students.find((student) => student.score === 90);
-  console.log(result); // Student {name: "C", age: 30, enrolled: true, score: 90}
-
-  /* const result = students.find(function(student) {
-    return student.score === 90;
-  });
-  */
-}
-
-// Q6. make an array of enrolled students
-{
-  /* filter: 콜백 함수 테스트 통과하는 원소 반환(true), 새로운 배열로 반환*/
-  const result = students.filter((student) => student.enrolled);
-  console.log(result); // (3) [Student, Student, Student]
+  const find = students.find((student) => student.score === 90);
+  console.log(find); // Student {name: 'C', age: 30, enrolled: true, score: 90}
 }
 
 
-// Q7. make an array containing only the students' scores
-// result should be: [45, 80, 90, 66, 88] : 점수만 들어 있는 새로운 배열을 만들어라.
 {
-  /* map: 배열 안에 들어있는 요소 각각을 콜백함수를 거쳐서, 다른 것으로 변환해줌 */
-  const result = students.map((student) => student.score);
-  console.log(result); // (5) [45, 80, 90, 66, 88]
+  // Q6. 재학생들을 새로운 배열로 만들기.
+  // filter : 콜백함수 테스트를 통과하는(true만) 모든 원소를 새로운 배열로 반환
+
+  const filter = students.filter((studnet) => studnet.enrolled);
+  console.log(filter); 
 }
 
-// Q8. check if there is a student with the score lower than 50
-{
-  /* some : 배열에서 하나라도 조건에 만족되는 것이 있다면, true를 반환 */ 
-  const result = students.some((student) => student.score < 50);
-  console.log(result); // true
 
-  /* every : 배열에 있는 모든 요소들이 조건에 충족 된다면, true를 반환 */ 
-  const result2 = students.every((student) => student.score < 50);
-  console.log(result2); // false
+{
+  // Q7. 학생들의 성적을 새로운 배열로 만들기.
+  // map : 배열 내의 모든 원소를 '순회'하며, 콜백 함수가 실행되어 그 '결과'를 새로운 배열로 반환
+
+  const map = students.map((studnet) => studnet.score);
+  console.log(map); // [45, 80, 90, 66, 88]
 }
 
-// Q9. compute students' average score
-{
-  /* reduce : 배열에 있는 모든 요소들의 값을 누적하는 api, 리턴 값이 있어야함*/
-  const result = students.reduce((prev, curr) => prev + curr.score, 0);
-  console.log(result / students.length); // 73.8
+
+{ 
+  // find, filter, map 비교
+
+  const find = students.find((student) => student.age < 30);
+  console.log(find); 
+  // Student {name: 'B', age: 28, enrolled: false, score: 80}
+
+  const filter = students.filter((student) => student.age < 30);
+  console.log(filter); 
+  // [ Student {name: 'B', age: 28, enrolled: false, score: 80}, 
+  // Student {name: 'E', age: 18, enrolled: true, score: 90}, ]
+
+  const map = students.map((student) => student.age < 30);
+  console.log(map);
+  // [false, true, false, false, true]
+
+  const map2 = students.map((student) => student.age);
+  console.log(map2);
+  // [30, 28, 30, 40, 18]
 }
 
-// Q10. make a string containing all the scores
-// result should be: '45, 80, 90, 66, 88'
+
 {
+  // Q8. 50점 이하의 학생이 있는지 확인g하기
+
+  // some : 배열에서 하나라도 조건에 만족되는 것이 있다면, true를 반환 
+  const some = students.some((student) => student.score < 50);
+  console.log(some); // true
+
+  // every : 배열에 있는 모든 요소들이 조건에 충족 된다면, true를 반환 
+  const every = students.every((student) => student.score < 50);
+  console.log(every); // false
+}
+
+
+{
+  // Q9. 평균 점수 계산하기
+
+  // reduce : 배열에 있는 모든 요소들의 값을 누적한다. 리턴 값이 있어야함
+  const reduce = students.reduce((prev, curr) => prev + curr.score, 0);
+  console.log(reduce / students.length); // 73.8
+}
+
+
+{
+  // Q10. 50점 이상인 점수를 문자열 변환하여 만들기.
+
   const result = students
   .map((student) => student.score) // 학생들을 모두 점수로 변환한 다음
-  //.filter((score) => score >= 50) // 그 점수들 가운데 50점 이상인 원소를 필터링하여
+  .filter((score) => score >= 50) // 그 점수들 가운데 50점 이상인 원소를 필터링하여
   .join(); // 문자열로 반환한다
-  console.log(result); // 45,80,90,66,88
+  console.log(result); // 80,90,66,90
 }
 
-// Bonus! do Q10 sorted in ascending order
-// result should be: '45, 66, 80, 88, 90'
+
 {
+  // Q11. 점수를 오름차순으로 문자열로 변환하여 정렬하기
+  
   const result = students
   .map((student) => student.score)
   .sort((a, b) => a - b) // 작은 것부터
